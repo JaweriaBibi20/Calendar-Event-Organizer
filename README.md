@@ -1,20 +1,21 @@
-# 📖 Smart Hybrid Dictionary (GUI)
+# 📅 Calendar & Event Organizer
 
-A high-performance, intelligent Desktop Dictionary application built in Java. This application showcases a unique **hybrid search architecture**: utilizing an ultra-fast local **Radix Tree (Trie)** data structure for instant autocomplete suggestions, combined with an **Online Dictionary API** to dynamically fetch real-time meanings, phonetics, and synonyms.
+A beautiful and interactive Desktop Calendar and Event Management application built in Java Swing. This project showcases core Object-Oriented Programming (OOP) principles, custom GUI styling, background multithreading, and local file handling.
 
 ## 🚀 Key Features
 
-* **Hybrid Search Mechanism:** * **Local Search:** Loads a local vocabulary dataset into a compressed Radix Tree for sub-millisecond, instant prefix-matching/autocomplete as you type.
-  * **Online Search:** Dynamically connects to a REST API to fetch live, detailed dictionary data when a word is queried.
-* **Interactive Swing GUI:** A responsive and clean Graphical User Interface built with NetBeans GUI Builder for a seamless user experience.
-* **Dynamic Autocomplete:** Shows instant suggestions in real-time as the user types, optimized by the Radix Tree structure.
-* **API Integration & JSON Parsing:** Performs live HTTP requests to retrieve meanings, part of speech, audio pronunciations, and synonyms, parsing JSON data on the fly.
+* **Custom Aesthetic UI:** Features a customized `GradientPanel` with soft pastel colors and an interactive `JCalendar` integration that dynamically highlights "Today" (Light Blue) and "Selected Day" (Light Pink).
+* **Full CRUD Operations:** Seamlessly Add, Update, and Delete events with built-in validation checks (such as preventing duplicate events at the same date and time).
+* **Local Data Persistence:** Uses Java Object Serialization to automatically save and load your events from a local `events.dat` file, ensuring no data is lost when the app closes.
+* **Smart Search & Filters:** Built-in search functionality to instantly filter events by Title or Category, with a quick option to reset the view.
+* **Background Reminder Thread:** Utilizes Java's `ScheduledExecutorService` to run a background timer that checks active events every minute and triggers a graphical popup alert (`JOptionPane`) when an event is due.
 
-## 🛠️ Tech Stack & Concepts Demonstrated
+## 🛠️ Tech Stack & OOP Concepts
 
 * **Language:** Java (JDK 8+)
-* **Data Structures:** Radix Tree (Patricia Trie) for space-optimized prefix routing.
-* **GUI Framework:** Java Swing & AWT
-* **Networking & API:** HTTP Client (`HttpURLConnection`), REST API integration, and JSON Data Parsing.
-* **OOP Principles:**
-  * **Separation of Concerns:** Clear architecture separating the GUI View, Radix Tree local logic, and Network/API parsing layers.
+* **GUI Toolkit:** Java Swing & AWT, JCalendar Library
+* **OOP Concepts Demonstrated:**
+  * **Inheritance:** Extends `JFrame` for the main application window and `JPanel` for the custom gradient styling (`GradientPanel`).
+  * **Encapsulation:** Clean structure of the data inside the serializable `Event` class.
+  * **Abstraction & Polymorphism:** Customizing component drawing by overriding `paintComponent` and custom UI Plaf setups.
+* **Core Java Libraries:** Java Concurrency (`ScheduledExecutorService`), Java Time API (`LocalDate`, `LocalTime`, `LocalDateTime`), and File I/O Streams.
